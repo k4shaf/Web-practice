@@ -1,0 +1,9 @@
+.container {
+  max-width: 960px;
+}
+
+.btn-dark {
+  background-color: #000;
+}
+
+.lh-condensed { line-height: 1.25; }
