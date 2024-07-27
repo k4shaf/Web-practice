@@ -58,13 +58,15 @@ app.get('/categories/:category', async (req, res) => {
 });
 
 // Login lekin abhi dashboard ni hai sadly
-// app.get('/dashboard', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'views', 'login.html'));
-// });
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'login.html'));
+});
 
-// app.get('/dashboard/new',)(req, res => {
-
-// })
+app.post('/dashboard/new', async (req, res) => {
+  let newProduct = new Product(req.body.product);
+  await newProduct.save();
+  // TDL: error handling
+})
 
 // 404
 app.use((req, res) => {
